@@ -1,0 +1,31 @@
+{
+	"image": "ghcr.io/tonyskidmore/devcontainers-terraform:latest",
+	"features": {
+			"ghcr.io/devcontainers/features/docker-in-docker:1": {
+				"version": "latest"
+			},
+			"ghcr.io/devcontainers/features/docker-from-docker:1": {
+				"version": "latest"
+			}
+	},
+	"remoteUser": "vscode",
+	"mounts": [
+		"source=${localEnv:HOME}/.pre-commit-b45d3000-4bd5-4324-999f-84ab72a27097,target=/home/vscode/.pre-commit,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+	],
+	"remoteEnv": {
+		"PRE_COMMIT_HOME": "/home/vscode/.pre-commit"
+	},
+	"postCreateCommand": "bash ./.devcontainer/init.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"hashicorp.terraform",
+				"ms-azuretools.vscode-azureterraform",
+				"shardulm94.trailing-spaces",
+				"streetsidesoftware.code-spell-checker",
+				"wwm.better-align"
+			]
+		}
+	}
+}

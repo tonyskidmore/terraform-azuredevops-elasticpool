@@ -1,0 +1,13 @@
+ado_project_names                   = ["win-vmss", "ve-vmss"]
+ado_service_connection_name         = "azurerm-oidc"
+vmss_name                           = "vmss-agent-pool-linux-001"
+vmss_resource_group_name            = "rg-tests-terraform-azurerm-vmss"
+ado_pool_name                       = "linvmss"
+ado_pool_desired_idle               = 0
+ado_pool_max_capacity               = 1
+ado_pool_ttl_mins                   = 10
+ado_pool_auto_update                = true
+ado_pool_auto_provision_projects    = true
+ado_pool_recycle_after_use          = false
+ado_pool_auth_all_pipelines         = true
+ado_service_connection_project_name = "win-vmss"
