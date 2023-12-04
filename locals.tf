@@ -31,7 +31,7 @@ locals {
   # service_endpoint_scope = local.projects[var.ado_service_connection_project_name]
   # service_endpoint_scope = { for k, v in local.projects : k => v if k == var.ado_service_connection_project_name }
   service_endpoint_scope = (
-    { var.ado_pool_name = {
+    { (var.ado_pool_name) = {
       name       = var.ado_pool_name
       project_id = local.projects[var.ado_service_connection_project_name].project_id # data.azuredevops_project.main[0].project_id
       }
