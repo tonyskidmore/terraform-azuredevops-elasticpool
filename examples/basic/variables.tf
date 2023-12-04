@@ -84,8 +84,8 @@ variable "ado_pool_auth_all_pipelines" {
   default     = false
 }
 
-variable "ado_projects" {
-  type = list(string)
-  description = "List of Azure DevOps projects where to create the agent pool. An empty list will create the pool in all projects."
-  default = []
-}
+# variable "ado_projects" {
+#   type        = list(string)
+#   description = "List of Azure DevOps projects where to create the agent pool. An empty list will create the pool in all projects."
+#   default     = []
+# }

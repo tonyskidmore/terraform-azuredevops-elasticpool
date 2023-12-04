@@ -13,21 +13,21 @@
 # }
 
 variable "ado_project_names" {
-  type = list(string)
+  type        = list(string)
   description = "List of Azure DevOps project names where to create the agent pool. An empty list will create the pool in all projects."
-  default = []
+  default     = []
 }
 
 variable "ado_projects_state" {
-  type = string
+  type        = string
   description = "The state of Azure DevOps project state the data resource should be filtered on."
-  default = null
+  default     = null
 }
 
 variable "ado_skip_auth_all_projects" {
-  type = list(string)
+  type        = list(string)
   description = "List of Azure DevOps projects to exclude from authorizing all pipelines."
-  default = []
+  default     = []
 }
 
 variable "ado_service_connection_id" {
@@ -71,11 +71,11 @@ variable "ado_pool_desired_idle" {
   default     = 0
 }
 
-variable "ado_pool_desired_size" {
-  type        = number
-  description = "The desired size of the pool"
-  default     = 0
-}
+# variable "ado_pool_desired_size" {
+#   type        = number
+#   description = "The desired size of the pool"
+#   default     = 0
+# }
 
 # variable "ado_pool_os_type" {
 #   type        = string
@@ -94,11 +94,11 @@ variable "ado_pool_max_capacity" {
   default     = 2
 }
 
-variable "ado_pool_max_saved_node_count" {
-  type        = number
-  description = "Keep machines in the pool on failure for investigation"
-  default     = 0
-}
+# variable "ado_pool_max_saved_node_count" {
+#   type        = number
+#   description = "Keep machines in the pool on failure for investigation"
+#   default     = 0
+# }
 
 variable "ado_pool_name" {
   type        = string
@@ -112,11 +112,11 @@ variable "ado_pool_recycle_after_use" {
   default     = false
 }
 
-variable "ado_pool_sizing_attempts" {
-  type        = number
-  description = "The number of sizing attempts executed while trying to achieve a desired size"
-  default     = 0
-}
+# variable "ado_pool_sizing_attempts" {
+#   type        = number
+#   description = "The number of sizing attempts executed while trying to achieve a desired size"
+#   default     = 0
+# }
 
 variable "ado_pool_ttl_mins" {
   type        = number

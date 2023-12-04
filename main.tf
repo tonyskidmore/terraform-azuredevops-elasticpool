@@ -4,7 +4,7 @@ data "azuredevops_project" "main" {
 }
 
 data "azuredevops_projects" "main" {
-  count = (var.ado_project_names == []) || (length(var.ado_project_names) != 1) ? 1 : 0
+  count = (length(var.ado_project_names) == 0) || (length(var.ado_project_names) != 1) ? 1 : 0
   state = var.ado_projects_state
 }
 
@@ -30,7 +30,7 @@ resource "azuredevops_agent_queue" "main" {
 }
 
 resource "azuredevops_pipeline_authorization" "main" {
-  for_each = local.pipeline_auth_projects
+  for_each    = local.pipeline_auth_projects
   project_id  = each.value.project_id
   resource_id = azuredevops_agent_queue.main[each.key].id
   type        = "queue"
