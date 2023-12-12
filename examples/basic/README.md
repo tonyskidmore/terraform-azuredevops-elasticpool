@@ -1,3 +1,11 @@
+# Basic example
+
+Creates a new scale set agent pool in Azure DevOps named `linvmss` connected to an existing VMSS called `vmss-agent-pool-linux-001` in the existing `rg-tests-terraform-azurerm-vmss` resource group.
+
+The `win-vmss` Azure DevOps group also already exists and so does the `azurerm-oidc` AzureRm service connection in
+the same project.
+
+
 <!-- BEGIN_TF_DOCS -->
 
 
@@ -14,7 +22,7 @@
 | Name | Version |
 |------|---------|
 | azuredevops | 0.10.0 |
-| azurerm | 3.83.0 |
+| azurerm | 3.84.0 |
 
 ## Modules
 
@@ -70,10 +78,9 @@ data "azurerm_virtual_machine_scale_set" "main" {
 module "terraform-azuredevops-elasticpool" {
   # source                    = "tonyskidmore/elasticpool/azuredevops"
   # version                   = "0.1.0"
-  source            = "../../"
-  ado_pool_name     = var.ado_pool_name
-  ado_project_names = var.ado_project_names
-  # ado_project_id                      = data.azuredevops_project.main.id
+  source                              = "../../"
+  ado_pool_name                       = var.ado_pool_name
+  ado_project_names                   = var.ado_project_names
   ado_service_connection_id           = data.azuredevops_serviceendpoint_azurerm.main.id
   ado_service_connection_project_name = var.ado_service_connection_project_name
   ado_pool_desired_idle               = var.ado_pool_desired_idle

@@ -15,10 +15,9 @@ data "azurerm_virtual_machine_scale_set" "main" {
 module "terraform-azuredevops-elasticpool" {
   # source                    = "tonyskidmore/elasticpool/azuredevops"
   # version                   = "0.1.0"
-  source            = "../../"
-  ado_pool_name     = var.ado_pool_name
-  ado_project_names = var.ado_project_names
-  # ado_project_id                      = data.azuredevops_project.main.id
+  source                              = "../../"
+  ado_pool_name                       = var.ado_pool_name
+  ado_project_names                   = var.ado_project_names
   ado_service_connection_id           = data.azuredevops_serviceendpoint_azurerm.main.id
   ado_service_connection_project_name = var.ado_service_connection_project_name
   ado_pool_desired_idle               = var.ado_pool_desired_idle

@@ -1,4 +1,4 @@
-ado_project_names                   = ["win-vmss", "ve-vmss"]
+ado_project_names                   = ["win-vmss"]
 ado_service_connection_name         = "azurerm-oidc"
 vmss_name                           = "vmss-agent-pool-linux-001"
 vmss_resource_group_name            = "rg-tests-terraform-azurerm-vmss"

@@ -2,7 +2,7 @@ locals {
   base_projects = (
     length(var.ado_project_names) != 1 ?
     { for p in data.azuredevops_projects.main[0].projects : p.name => p } :
-    { data.azuredevops_project.main[0].name = {
+    { (data.azuredevops_project.main[0].name) = {
       name       = data.azuredevops_project.main[0].name
       project_id = data.azuredevops_project.main[0].project_id
       }
