@@ -10,6 +10,17 @@ pool in Azure DevOps.
 This module is used by the [terraform-azurerm-vmss-devops-agent](https://registry.terraform.io/modules/tonyskidmore/vmss-devops-agent/azurerm/latest)
 to create the Azure DevOps self-hosted Azure DevOps Scale Set agent pool.
 
+## Requirements
+
+The following environment variables need to be set to valid values before running the module:
+
+```
+
+AZDO_PERSONAL_ACCESS_TOKEN
+AZDO_ORG_SERVICE_URL
+
+```
+
 <!-- BEGIN_TF_DOCS -->
 
 
@@ -77,7 +88,7 @@ module "terraform-azuredevops-elasticpool" {
 | <a name="input_ado_pool_ttl_mins"></a> [ado\_pool\_ttl\_mins](#input\_ado\_pool\_ttl\_mins) | The minimum time in minutes to keep idle agents alive | `number` | `30` | no |
 | <a name="input_ado_project_names"></a> [ado\_project\_names](#input\_ado\_project\_names) | List of Azure DevOps project names where to create the agent pool. An empty list will create the pool in all projects. | `list(string)` | `[]` | no |
 | <a name="input_ado_projects_state"></a> [ado\_projects\_state](#input\_ado\_projects\_state) | The state of Azure DevOps project state the data resource should be filtered on. | `string` | `null` | no |
-| <a name="input_ado_service_connection_id"></a> [ado\_service\_connection\_id](#input\_ado\_service\_connection\_id) | Azure DevOps AzureRm service connection id | `string` | n/a | yes |
+| <a name="input_ado_service_connection_id"></a> [ado\_service\_connection\_id](#input\_ado\_service\_connection\_id) | Azure DevOps AzureRm service connection ID | `string` | n/a | yes |
 | <a name="input_ado_service_connection_project_name"></a> [ado\_service\_connection\_project\_name](#input\_ado\_service\_connection\_project\_name) | Azure DevOps project name where service connection exists | `string` | n/a | yes |
 | <a name="input_ado_skip_auth_all_projects"></a> [ado\_skip\_auth\_all\_projects](#input\_ado\_skip\_auth\_all\_projects) | List of Azure DevOps projects to exclude from authorizing all pipelines. | `list(string)` | `[]` | no |
 | <a name="input_ado_vmss_id"></a> [ado\_vmss\_id](#input\_ado\_vmss\_id) | Azure Virtual Machine Scale Set Resource ID if not created by the module | `string` | `""` | no |
